@@ -22,10 +22,11 @@ Key routing rules:
 - Save progress → invoke /context-save
 - Resume context → invoke /context-restore
 
+## Public Marketing Repository
+**CRITICAL FOR ALL AGENTS:** The local codebase on this Mac (`/Users/apple/code/apps/b2b-agent-api`) is the strictly PUBLIC marketing and SEO repository (mapped to `agentdata-mcp-server` on GitHub). 
+**DO NOT** place any backend code, API keys, research documents, or Agent-OS specifications here. All actual backend infrastructure and confidential data resides in the PRIVATE repository at `/Users/apple/code/apps/agentdata-code`.
+
 ## Remote Server Architecture Mapping
-**CRITICAL FOR ALL AGENTS:** The local codebase on this Mac (`/Users/apple/code/apps/b2b-agent-api`) is the development repository. However, the **live production application** resides on a remote VPS.
 - **VPS Hostname:** `SUPserver-ssdnodes` (IP: 199.241.138.217)
 - **Production Directory:** `/opt/b2b-agent-api/`
-- **Deployment Protocol:** Changes made locally must be committed to GitHub (`origin/master`), and then deployed to the VPS via SSH (`ssh SUPserver-ssdnodes 'cd /opt/b2b-agent-api && git pull'`).
 - **Database:** Runs in a Docker volume on the VPS (`b2b_agent_db`). Do NOT attempt to run local database migrations without SSHing into the remote environment.
-- **Agent-OS Documentation:** Review `.agent-os/specs/` and `.agent-os/standards/` for detailed architectural, monetization, and security directives.
