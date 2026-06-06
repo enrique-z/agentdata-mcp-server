@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgentData.eu - Spanish B2B Leads</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap" rel="stylesheet">
+
+  <script type="module">
+    import { prepare, layout } from 'https://esm.sh/@chenglou/pretext';
+    
+    // Pattern 1: Basic height computation
+    await document.fonts.ready;
+    const elements = document.querySelectorAll('[data-pretext]');
+    const prepared = new Map();
+
+    for (const el of elements) {
+      const text = el.textContent;
+      const font = getComputedStyle(el).font;
+      prepared.set(el, prepare(text, font));
+    }
+
+    function relayout() {
+      for (const [el, handle] of prepared) {
+        const { height } = layout(handle, el.clientWidth, parseFloat(getComputedStyle(el).lineHeight));
+        el.style.height = `${height}px`;
+      }
+    }
+
+    new ResizeObserver(() => relayout()).observe(document.body);
+    relayout();
+  </script>
+
+  <style>
+    :root {
+      --color-bg: #FFFFFF;
+      --color-surface: #F5F5F5;
+      --color-text: #000000;
+      --color-text-muted: #666666;
+      --color-border: #E5E5E5;
+      --color-primary: #00FF41;
+      --color-primary-hover: #00CC33;
+      --color-primary-text: #000000;
+      
+      --font-display: 'General Sans', sans-serif;
+      --font-body: 'Geist', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --space-2xs: 4px;
+      --space-xs: 8px;
+      --space-sm: 12px;
+      --space-md: 16px;
+      --space-lg: 24px;
+      --space-xl: 32px;
+      --space-2xl: 48px;
+      --space-3xl: 64px;
+
+      --radius-sm: 2px;
+      --radius-md: 4px;
+      --radius-lg: 8px;
+    }
+
+    /* Force Dark Mode for Terminal Vibe */
+    [data-theme="dark"] {
+      --color-bg: #0A0A0A;
+      --color-surface: #111111;
+      --color-text: #FFFFFF;
+      --color-text-muted: #888888;
+      --color-border: #222222;
+      --color-primary: #00FF41;
+      --color-primary-hover: #00CC33;
+      --color-primary-text: #000000;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.5;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      line-height: 1.1;
+      margin-bottom: var(--space-md);
+      letter-spacing: -0.02em;
+    }
+
+    h1 { font-size: 4rem; }
+    h2 { font-size: 2rem; margin-top: var(--space-xl); border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-xs); }
+    h3 { font-size: 1.25rem; }
+    p { margin-bottom: var(--space-md); color: var(--color-text-muted); }
+    
+    code, .mono { font-family: var(--font-mono); font-size: 0.9em; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: var(--space-2xl) var(--space-md); }
+
+    /* Header */
+    .header { display: flex; justify-content: space-between; align-items: center; padding: var(--space-md) 0; border-bottom: 1px solid var(--color-border); margin-bottom: var(--space-3xl); }
+    .logo { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; letter-spacing: -0.04em; display: flex; align-items: center; gap: 8px;}
+    .logo span { color: var(--color-primary); }
+    .nav-links { display: flex; gap: var(--space-lg); font-family: var(--font-mono); font-size: 0.85rem; }
+    .nav-links a { color: var(--color-text-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--color-primary); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-xs) var(--space-md);
+      font-family: var(--font-body);
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.1s ease-in-out;
+      border: 1px solid transparent;
+      font-size: 0.95rem;
+    }
+    .btn-primary { background: var(--color-primary); color: var(--color-primary-text); border-color: var(--color-primary); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em;}
+    .btn-primary:hover { background: var(--color-primary-hover); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0, 255, 65, 0.2); }
+    .btn-secondary { background: var(--color-surface); color: var(--color-text); border-color: var(--color-border); }
+    .btn-secondary:hover { background: var(--color-border); }
+
+    /* Hero Section */
+    .hero { text-align: left; margin-bottom: var(--space-3xl); max-width: 800px;}
+    .hero p[data-pretext] { font-size: 1.25rem; margin-bottom: var(--space-xl); color: var(--color-text); line-height: 1.4; }
+
+    /* Stats Grid */
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); margin-bottom: var(--space-3xl); }
+    .stat-card { background: var(--color-surface); border: 1px solid var(--color-border); padding: var(--space-lg); border-radius: var(--radius-md); }
+    .stat-val { font-family: var(--font-mono); font-size: 2.5rem; color: var(--color-primary); font-weight: 700; line-height: 1; margin-bottom: var(--space-xs); }
+    .stat-label { font-family: var(--font-body); color: var(--color-text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* Feature Grid */
+    .features { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); margin-bottom: var(--space-3xl); }
+    .feature { border-left: 2px solid var(--color-border); padding-left: var(--space-md); }
+    .feature:hover { border-color: var(--color-primary); }
+
+    /* Interactive Terminal Demo */
+    .terminal { background: #000; border: 1px solid #333; border-radius: var(--radius-md); padding: var(--space-md); font-family: var(--font-mono); font-size: 0.85rem; color: #aaa; margin-bottom: var(--space-xl); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    .term-header { display: flex; gap: 6px; margin-bottom: var(--space-md); }
+    .term-dot { width: 10px; height: 10px; border-radius: 50%; background: #333; }
+    .term-line { margin-bottom: var(--space-xs); }
+    .prompt { color: var(--color-primary); }
+    
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      .stats-grid, .features { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo">Agent<span>Data</span>.eu</div>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#" class="btn btn-secondary" style="padding: 4px 12px; margin-top:-4px;">Login</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="badge badge-success" style="border: 1px solid var(--color-primary); color: var(--color-primary); background: rgba(0,255,65,0.1); padding: 4px 8px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-md); display: inline-block;">Live Database</div>
+        
+        <h1 style="color: #fff;">Stop scraping.<br>Start selling.</h1>
+        <p data-pretext>Get programmatic access to 170,000+ verified B2B companies in Spain. Featuring a highly-curated premium subset of 26,000+ CEO direct dials and mobile phones. Bypassing legacy corporate gatekeepers has never been cheaper.</p>
+        
+        <div style="display:flex; gap: var(--space-md); align-items: center; margin-top: var(--space-xl);">
+          <a href="https://buy.stripe.com/3cI4gAbhzf6c0Cc3OX0oM0a" class="btn btn-primary" style="padding: var(--space-sm) var(--space-xl); font-size: 1.1rem;">Subscribe for €29/mo</a>
+          <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-text-muted);">Secure Stripe Checkout &rarr;</span>
+        </div>
+      </section>
+
+      <section style="margin-bottom: var(--space-3xl);">
+        <h3 style="color: #fff; margin-bottom: var(--space-xs);">For AI Agents & Developers (MCP)</h3>
+        <p style="margin-bottom: var(--space-md);" data-pretext>AgentData.eu is a native Model Context Protocol (MCP) server. Just add this to your <code>claude_desktop_config.json</code> or Cursor settings:</p>
+        <div class="terminal" style="margin-bottom: 0;">
+          <div class="term-header">
+            <div class="term-dot"></div><div class="term-dot"></div><div class="term-dot"></div>
+          </div>
+          <div class="term-line" style="color: #fff;">
+<pre style="margin: 0;">{
+  "mcpServers": {
+    "agentdata-spain": {
+      "command": "python",
+      "args": ["-m", "b2b_mcp_server"],
+      "env": {
+        "AGENTDATA_API_KEY": "your_api_key_here"
+      }
+    }
+  }
+}</pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-val">172k</div>
+          <div class="stat-label">Verified Companies</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">26k+</div>
+          <div class="stat-label">CEO Direct Dials</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">< 40ms</div>
+          <div class="stat-label">Query Latency</div>
+        </div>
+      </section>
+
+      <div class="terminal">
+        <div class="term-header">
+          <div class="term-dot"></div><div class="term-dot"></div><div class="term-dot"></div>
+        </div>
+        <div class="term-line"><span class="prompt">guest@agentdata:~$</span> SELECT name, ceo, mobile FROM leads WHERE sector='Logistics' AND province='Madrid' LIMIT 3;</div>
+        <div class="term-line" style="color:#fff;">
+          +-------------------+----------------+----------------+<br>
+          | name              | ceo            | mobile         |<br>
+          +-------------------+----------------+----------------+<br>
+          | TechLogistica SL  | Maria Garcia   | +34 600 123 456|<br>
+          | Transportes BCN   | Ana Martinez   | +34 622 456 789|<br>
+          | EnerSaaS Supply   | Carlos Ruiz    | +34 611 987 654|<br>
+          +-------------------+----------------+----------------+
+        </div>
+        <div class="term-line"><span class="prompt">guest@agentdata:~$</span> <span style="animation: blink 1s step-end infinite;">_</span></div>
+      </div>
+
+      <section id="features" class="features" style="margin-top: var(--space-3xl);">
+        <div class="feature">
+          <h3 style="margin-top:0">Built for Modern Outbound</h3>
+          <p data-pretext>Pipe leads instantly to n8n, Make, or HubSpot via Webhooks. Includes a 1-click formatted "Copy for WhatsApp" button to feed your dialers perfectly.</p>
+        </div>
+        <div class="feature">
+          <h3 style="margin-top:0">Smart CSV Exports</h3>
+          <p data-pretext>We protect our asset while empowering your workflow. Export up to 50 rows per day to feed your automated sequences without draining the database.</p>
+        </div>
+        <div class="feature">
+          <h3 style="margin-top:0">MCP Server Native</h3>
+          <p data-pretext>Using AI agents? We are the only B2B dataset natively integrated with the Model Context Protocol. Let Claude Desktop or Cursor query the DB autonomously.</p>
+        </div>
+        <div class="feature">
+          <h3 style="margin-top:0">GDPR & LOPDGDD Compliant</h3>
+          <p data-pretext>Privacy by Design architecture. Built-in compliance layers handle the "Right to Object" seamlessly. You act as the Independent Data Controller.</p>
+        </div>
+      </section>
+
+      <section id="pricing" style="margin-top: var(--space-3xl); text-align: center; border-top: 1px solid var(--color-border); padding-top: var(--space-3xl);">
+        <h2>One Simple Price.</h2>
+        <p style="max-width: 600px; margin: 0 auto var(--space-xl) auto;" data-pretext>No massive annual contracts. No talking to sales. Get instant access to the dashboard and API.</p>
+        
+        <div class="card" style="max-width: 400px; margin: 0 auto; text-align: left; border-color: var(--color-primary);">
+          <div style="font-family: var(--font-mono); color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem; margin-bottom: var(--space-xs);">Pro Plan</div>
+          <div style="font-size: 3rem; font-family: var(--font-display); font-weight: 700; color: #fff; margin-bottom: var(--space-sm);">€29<span style="font-size: 1rem; color: var(--color-text-muted); font-family: var(--font-body); font-weight: 400;">/month</span></div>
+          
+          <ul style="list-style: none; margin-bottom: var(--space-lg); font-family: var(--font-body); color: var(--color-text-muted);">
+            <li style="margin-bottom: 8px;"><span style="color:var(--color-primary); margin-right: 8px;">✓</span> Full Dashboard Access</li>
+            <li style="margin-bottom: 8px;"><span style="color:var(--color-primary); margin-right: 8px;">✓</span> 26k+ CEO Mobiles</li>
+            <li style="margin-bottom: 8px;"><span style="color:var(--color-primary); margin-right: 8px;">✓</span> MCP API Access</li>
+            <li style="margin-bottom: 8px;"><span style="color:var(--color-primary); margin-right: 8px;">✓</span> 50 CSV Exports / Day</li>
+            <li style="margin-bottom: 8px;"><span style="color:var(--color-primary); margin-right: 8px;">✓</span> Webhook Integrations</li>
+          </ul>
+          
+          <a href="https://buy.stripe.com/3cI4gAbhzf6c0Cc3OX0oM0a" class="btn btn-primary" style="width: 100%; display: block;">Start Subscription</a>
+        </div>
+      </section>
+    </main>
+
+    <footer style="margin-top: var(--space-3xl); padding-top: var(--space-xl); border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-text-muted);">
+      <div>&copy; 2026 AgentData.eu</div>
+      <div style="display:flex; gap: var(--space-md);">
+        <a href="/.well-known/llms.txt" style="color: inherit; text-decoration: none;">llms.txt</a>
+        <a href="https://github.com/enrique-z/agentdata-mcp-server" style="color: inherit; text-decoration: none;">GitHub</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

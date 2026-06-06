@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "b2b-spain-api": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sse",
+        "--url",
+        "https://api.b2bspain.com/sse",
+        "--header",
+        "x-api-key=YOUR_API_KEY_HERE"
+      ]
+    }
+  }
+}
