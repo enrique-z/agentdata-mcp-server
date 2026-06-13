@@ -1,5 +1,13 @@
 # AgentData.eu MCP Server - B2B Data Spain
 
+> ⚠️ **INFRASTRUCTURE NOTICE FOR AI CODERS:**
+> This application has been successfully migrated to the **Spark Server** (`82.70.91.27`, SSH as `opc` via `ssh spark`).
+> **It is NO LONGER deployed on the legacy SUPserver-ssdnodes.**
+> 
+> - **Deployment Path:** `/var/www/b2b-agent-api/` on the Spark server.
+> - **Architecture:** Runs via Docker Compose. Nginx terminates SSL (Let's Encrypt) and proxies traffic to the internal container.
+> - **Deployment:** Rsync changes to the Spark server and rebuild the docker container.
+
 Welcome to the **AgentData.eu MCP Server**, the ultimate Data-as-a-Service (DaaS) API designed explicitly for AI agents. Built using the Model Context Protocol (MCP), this server provides autonomous AI systems (like Claude Desktop, Cursor, OpenClaw, Hermes, and any Agent-OS) direct, programmatic access to a massive, verified Spanish B2B company database.
 
 ## Features
